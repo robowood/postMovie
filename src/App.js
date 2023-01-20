@@ -43,6 +43,7 @@ function App() {
   }, [fetchMoviesHandler]);
 
   async function addMovieHandler(movie) {
+    console.log(movie);
     const response = await fetch('https://fetchmovie-54101-default-rtdb.firebaseio.com/movies.json', {
       method: 'POST',
       body: JSON.stringify(movie),
@@ -75,8 +76,11 @@ function App() {
       </section>
       <section>
         <button onClick={fetchMoviesHandler}>Fetch Movies</button>
+
       </section>
-      <section>{content}</section>
+      <section>{content} <button >delete</button>
+</section>
+
     </React.Fragment>
   );
 }
